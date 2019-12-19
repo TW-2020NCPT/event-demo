@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>事件代理的应用示例 - 计算器(升级版)</title>
+    <style>
+        #event-table td {
+            border: solid 1px goldenrod;
+            width: 100px;
+            height: 50px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        #event-table td:hover {
+            background-color: hotpink;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <h2>事件代理的应用示例 - 计算器(升级版)</h2>
+        <table id="event-table">
+            <tbody>
+                <tr>
+                    <td>Inv</td>
+                    <td>Rad</td>
+                    <td>x!</td>
+                    <td>(</td>
+                    <td>)</td>
+                    <td>c</td>
+                    <td>del</td>
+                </tr>
+                <tr>
+                    <td>In</td>
+                    <td>sin</td>
+                    <td>%</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>÷</td>
+                </tr>
+                <tr>
+                    <td>log</td>
+                    <td>cos</td>
+                    <td>√</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>x</td>
+                </tr>
+                <tr>
+                    <td>^</td>
+                    <td>tan</td>
+                    <td>1/x</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>−</td>
+                </tr>
+                <tr>
+                    <td>Exp</td>
+                    <td>π</td>
+                    <td>e</td>
+                    <td>0</td>
+                    <td>.</td>
+                    <td>=</td>
+                    <td>+</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</body>
+<script>
+
+    /* 事件代理 */
+    const $eventTable = document.getElementById('event-table');
+
+    $eventTable.addEventListener('click', (event) => {
+        // event.stopPropagation();
+        console.log(event);
+        alert(event.target.innerHTML);
+    })
+
+</script>
+
+</html>

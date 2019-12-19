@@ -1,0 +1,51 @@
+{
+  "id": "1513782",
+  "name": "bolg",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "3331316",
+      "name": "点赞",
+      "font_class": "dianzan",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "4718359",
+      "name": "评 论",
+      "font_class": "pinglun",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "7647958",
+      "name": "点赞",
+      "font_class": "dianzan_active",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "8081110",
+      "name": "删除筛选项",
+      "font_class": "delete",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "8493481",
+      "name": "引号",
+      "font_class": "yinhao",
+      "unicode": "e654",
+      "unicode_decimal": 58964
+    },
+    {
+      "icon_id": "8973145",
+      "name": "引号",
+      "font_class": "quotation",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    }
+  ]
+}

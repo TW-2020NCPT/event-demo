@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>事件冒泡与捕获</title>
+    <style>
+        #parent-element {
+            width: 600px;
+            height: 400px;
+            background-color: green;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #child-element {
+            width: 300px;
+            height: 200px;
+            background-color: yellow;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #child-child-element {
+            width: 150px;
+            height: 100px;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <h2>事件流 - demo</h2>
+        <div id="parent-element">
+            <div id="child-element">
+                <div id="child-child-element">
+
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+<script>
+
+    /* 事件流 */
+    const $parentElement = document.getElementById('parent-element');
+    const $childElement = document.getElementById('child-element');
+    const $childChildElement = document.getElementById('child-child-element');
+
+    $parentElement.addEventListener('click', (event) => {
+        alert('parent-element-false');
+    }, false);
+
+    $parentElement.addEventListener('click', (event) => {
+        alert('parent-element-true');
+    }, true);
+
+    $childElement.addEventListener('click', (event) => {
+        alert('child-element-false');
+    }, false);
+
+    $childElement.addEventListener('click', (event) => {
+        alert('child-element-true');
+    }, true);
+
+    $childChildElement.addEventListener('click', (event) => {
+        alert('child-child-element1');
+    });
+
+    $childChildElement.addEventListener('click', (event) => {
+        alert('child-child-element2');
+    });
+
+
+    // window.addEventListener('click', (event) => {
+    //     alert('window click');
+    // })
+
+</script>
+
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>内容卡片</title>
+    <link rel="stylesheet" href="./libs/font/iconfont.css">
+    <style>
+        .container {
+            width: 400px;
+            text-align: right;
+        }
+
+        #add-btn {
+            padding: 6px 10px;
+            background-color: blueviolet;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        #list {
+            padding-left: 0px;
+            list-style-type: none;
+        }
+
+        #list .btns-row {
+            border: solid 1px #999;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .btns-row .btn {
+            display: inline-block;
+            margin-left: 10px;
+            font-size: 0px;
+        }
+
+        .btns-row .btn i,
+        .btns-row .btn span {
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="container">
+        <button id="add-btn">增加一行</button>
+        <ul id="list">
+            <li id="row-1" class="btns-row">
+                <div data-type="comment" class="btn">
+                    <i class="iconfont icon-pinglun"></i>
+                    <span>回复</span>
+                </div>
+                <div data-type="star" class="btn">
+                    <i class="icon iconfont icon-dianzan"></i>
+                    <span>231</span>
+                </div>
+                <div data-type="stamp" class="btn">
+                    <i class="icon iconfont icon-dianzan_active"></i>
+                    <span>12</span>
+                </div>
+            </li>
+            <li id="row-2" class="btns-row">
+                <div data-type="comment" class="btn">
+                    <i class="iconfont icon-pinglun"></i>
+                    <span>回复</span>
+                </div>
+                <div data-type="star" class="btn">
+                    <i class="icon iconfont icon-dianzan"></i>
+                    <span>231</span>
+                </div>
+                <div data-type="stamp" class="btn">
+                    <i class="icon iconfont icon-dianzan_active"></i>
+                    <span>12</span>
+                </div>
+            </li>
+        </ul>
+    </section>
+</body>
+<script>
+    // (function () {
+    //     const $list = document.getElementById('list');
+    //     const $addBtn = document.getElementById('add-btn');
+
+    //     function bindAddEvent() {
+    //         $addBtn.addEventListener('click', function (event) {
+    //             const $btns = document.getElementsByClassName('btns-row');
+    //             addElement($btns.length + 1);
+    //         });
+    //     }
+
+    //     function bindRowEvent() {
+    //         const $btns = document.getElementsByClassName('btns-row');
+
+    //         for (let i = 0, length = $btns.length; i < length; i++) {
+    //             $btns[i].addEventListener('click', function (event) {
+    //                 // let itemId = this.getAttribute('id');
+    //                 // let btnType = event.target.getAttribute('data-type');
+    //                 // if (!btnType) {
+    //                 //     btnType = event.target.parentElement.getAttribute('data-type');
+    //                 // }
+    //                 console.log(`点击了 ${itemId} - ${btnType} 按钮`);
+    //             });
+    //         }
+    //     }
+
+    //     function addElement(id) {
+    //         let $liElement = document.createElement('li');
+    //         $liElement.setAttribute('id', 'row-' + id);
+    //         $liElement.setAttribute('class', 'btns-row');
+
+    //         $liElement.innerHTML =
+    //             '<div data-type="comment" class="btn">' +
+    //             '<i class="iconfont icon-pinglun"></i>' +
+    //             '<span>回复</span>' +
+    //             '</div>' +
+    //             '<div data-type="star" class="btn">' +
+    //             '<i class="icon iconfont icon-dianzan"></i>' +
+    //             '<span>231</span>' +
+    //             '</div>' +
+    //             '<div data-type="stamp" class="btn">' +
+    //             '<i class="icon iconfont icon-dianzan_active"></i>' +
+    //             '<span>12</span>' +
+    //             '</div>';
+    //         $list.appendChild($liElement);
+    //         bindRowEvent();
+    //     }
+
+    //     bindAddEvent();
+    //     bindRowEvent();
+    // })();
+
+    /* 使用事件代理 */
+    (function () {
+        const $list = document.getElementById('list');
+        const $addBtn = document.getElementById('add-btn');
+
+        function bindAddEvent() {
+            $addBtn.addEventListener('click', function (event) {
+                const $btns = document.getElementsByClassName('btns-row');
+                addElement($btns.length + 1);
+            });
+        }
+
+        function bindRowEvent() {
+            $list.addEventListener('click', function (event) {
+                let itemId = event.target.parentElement.getAttribute('id') || event.target.parentElement.parentElement.getAttribute('id');
+                let btnType = event.target.getAttribute('data-type');
+                if (!btnType) {
+                    btnType = event.target.parentElement.getAttribute('data-type');
+                }
+                console.log(`点击了 ${itemId} - ${btnType} 按钮`);
+            });
+        }
+
+        function addElement(id) {
+            let $liElement = document.createElement('li');
+            $liElement.setAttribute('id', 'row-' + id);
+            $liElement.setAttribute('class', 'btns-row');
+
+            $liElement.innerHTML =
+                '<div data-type="comment" class="btn">' +
+                '<i class="iconfont icon-pinglun"></i>' +
+                '<span>回复</span>' +
+                '</div>' +
+                '<div data-type="star" class="btn">' +
+                '<i class="icon iconfont icon-dianzan"></i>' +
+                '<span>231</span>' +
+                '</div>' +
+                '<div data-type="stamp" class="btn">' +
+                '<i class="icon iconfont icon-dianzan_active"></i>' +
+                '<span>12</span>' +
+                '</div>';
+            $list.appendChild($liElement);
+        }
+
+        bindAddEvent();
+        bindRowEvent();
+    })()
+</script>
+
+</html>

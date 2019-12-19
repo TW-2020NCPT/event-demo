@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>阻止默认事件</title>
+</head>
+
+<body>
+    <div id="info">
+        <a href="www.baidu.com" id="test">阻止默认事件</a>
+    </div>
+</body>
+<script>
+    document.getElementById('test').addEventListener('click', (event) => {
+        if (event && event.preventDefault) {
+            //非IE浏览器
+            event.preventDefault();
+        } else {
+            //IE浏览器(IE11以下)
+            window.event.returnValue = false;
+        }
+        //return false;   //或者不写上面的判断直接写这句
+    });
+</script>
+
+</html>

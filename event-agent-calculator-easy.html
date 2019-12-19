@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>事件代理的应用示例 - 计算器(简易版)</title>
+    <style>
+        #event-table td {
+            border: solid 1px goldenrod;
+            width: 100px;
+            height: 50px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        #event-table td:hover {
+            background-color: hotpink;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <h2>事件代理的应用示例 - 计算器(简易版)</h2>
+        <table id="event-table">
+            <tbody>
+                <tr>
+                    <td id="btn-ac" class="calculator-btn">AC</td>
+                    <td id="btn-del" class="calculator-btn">del</td>
+                    <td id="btn-surplus" class="calculator-btn">%</td>
+                    <td id="btn-except" class="calculator-btn">÷</td>
+                </tr>
+                <tr>
+                    <td id="btn-seven" class="calculator-btn">7</td>
+                    <td id="btn-eight" class="calculator-btn">8</td>
+                    <td id="btn-nine" class="calculator-btn">9</td>
+                    <td id="btn-product" class="calculator-btn">x</td>
+                </tr>
+                <tr>
+                    <td id="btn-four" class="calculator-btn">4</td>
+                    <td id="btn-five" class="calculator-btn">5</td>
+                    <td id="btn-six" class="calculator-btn">6</td>
+                    <td id="btn-reduce" class="calculator-btn">-</td>
+                </tr>
+                <tr>
+                    <td id="btn-one" class="calculator-btn">1</td>
+                    <td id="btn-two" class="calculator-btn">2</td>
+                    <td id="btn-three" class="calculator-btn">3</td>
+                    <td id="btn-add" class="calculator-btn">+</td>
+                </tr>
+                <tr>
+                    <td id="btn-zero" class="calculator-btn" colspan="2">0</td>
+                    <td id="btn-point" class="calculator-btn">.</td>
+                    <td id="btn-equal" class="calculator-btn">=</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</body>
+<script>
+
+    /* 目标元素绑定 by id */
+    document.getElementById('btn-ac').addEventListener('click', (event) => {
+        // do some things
+    })
+    document.getElementById('btn-del').addEventListener('click', (event) => {
+        // do some things
+    })
+    document.getElementById('btn-surplus').addEventListener('click', (event) => {
+        // do some things
+    })
+    document.getElementById('btn-except').addEventListener('click', (event) => {
+        // do some things
+    })
+    document.getElementById('btn-seven').addEventListener('click', (event) => {
+        // do some things
+    })
+    document.getElementById('btn-eight').addEventListener('click', (event) => {
+        // do some things
+    })
+    document.getElementById('btn-nine').addEventListener('click', (event) => {
+        // do some things
+    })
+    document.getElementById('btn-product').addEventListener('click', (event) => {
+        // do some things
+    })
+    document.getElementById('btn-four').addEventListener('click', (event) => {
+        // do some things
+    })
+    document.getElementById('btn-five').addEventListener('click', (event) => {
+        // do some things
+    })
+    document.getElementById('btn-six').addEventListener('click', (event) => {
+        // do some things
+    })
+    document.getElementById('btn-reduce').addEventListener('click', (event) => {
+        // do some things
+    })
+    document.getElementById('btn-one').addEventListener('click', (event) => {
+        // do some things
+    })
+    document.getElementById('btn-two').addEventListener('click', (event) => {
+        // do some things
+    })
+    document.getElementById('btn-three').addEventListener('click', (event) => {
+        // do some things
+    })
+    document.getElementById('btn-add').addEventListener('click', (event) => {
+        // do some things
+    })
+    document.getElementById('btn-zero').addEventListener('click', (event) => {
+        // do some things
+    })
+    document.getElementById('btn-point').addEventListener('click', (event) => {
+        // do some things
+    })
+    document.getElementById('btn-equal').addEventListener('click', (event) => {
+        // do some things
+    })
+
+    /* 目标元素绑定 by class */
+    // console.log(document.getElementsByClassName('calculator-btn'));
+    // document.getElementsByClassName('calculator-btn').addEventListener('click', () => {
+
+    // })
+    // document.getElementsByClassName('calculator-btn').onClick = (event) => {
+    //     console.log(event.target)
+    // }
+
+    // const $btnList = document.getElementsByClassName('calculator-btn');
+    // for (let i = 0, length = $btnList.length; i < length; i++) {
+    //     $btnList[i].addEventListener('click', (event) => {
+    //         console.log(event.target.innerHTML);
+    //     })
+
+    // }
+</script>
+
+</html>
